@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>0</h1>
+      <button type="button" class="increase">+</button>
+      <button type="button" class="decrease">-</button>
+    </div>
+    <script src="index.js"></script>
+    <script>
+      // function show() {
+      //   let value = parseInt(document.querySelector("h1").innerHTML);
+
+      //   document.querySelector("div").addEventListener("click", (e) => {
+      //     // 클릭한 버튼 클래스 값에 따라 h1 태그 안의 값 변경
+      //     let op = e.target.getAttribute("class");
+
+      //     if (op === "increase") {
+      //       value += 1;
+      //     } else if (op === "decrease") {
+      //       value -= 1;
+      //     }
+      //     document.querySelector("h1").innerHTML = value.toString();
+      //   });
+      // }
+      // show();
+
+      // 아래 방식으로도 가능함
+      let counter = 0;
+
+      function handleChange(e) {
+        if (e.target.classList.contains("increase")) {
+          counter += 1;
+        } else {
+          counter -= 1;
+        }
+        document.querySelector("h1").innerHTML = counter;
+      }
+
+      document.querySelector(".increase").addEventListener("click", handleChange);
+      document.querySelector(".decrease").addEventListener("click", handleChange);
+    </script>
+  </body>
+</html>
